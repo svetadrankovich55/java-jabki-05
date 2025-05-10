@@ -34,8 +34,7 @@ class MainTest {
 
     @Test
     void generateAndPrintRandomArray() {
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                () -> Main.generateAndPrintRandomArray(0));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> Main.generateAndPrintRandomArray(0));
         assertEquals("Размер массива должен быть больше нуля!", exception.getMessage());
     }
 
@@ -50,8 +49,7 @@ class MainTest {
         assertEquals(-10, Main.sumArray(negatives));
         int[] mixed = {-5, 10, 3, -2, 0};
         assertEquals(6, Main.sumArray(mixed));
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                () -> Main.generateAndPrintRandomArray(0));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> Main.generateAndPrintRandomArray(0));
         assertEquals("Размер массива должен быть больше нуля!", exception.getMessage());
     }
 
@@ -77,10 +75,7 @@ class MainTest {
         String expectedOutput = "Месяцы, начинающиеся на 'М':\r\nMarch\r\nMay\r\n";
         assertEquals(expectedOutput, outContent.toString());
         String[] emptyArray = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.monthsStartingWithM(emptyArray)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.monthsStartingWithM(emptyArray));
         assertEquals("Массив месяцев пуст или не инициализирован", exception.getMessage());
     }
 
@@ -93,10 +88,7 @@ class MainTest {
         int[] expected2 = {10, -10, 5, 0, -5};
         assertArrayEquals(expected, Main.reverseArray(input));
         int[] emptyArray = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.reverseArray(emptyArray)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.reverseArray(emptyArray));
         assertEquals("Массив не может быть null или пустым", exception.getMessage());
     }
 
@@ -111,10 +103,7 @@ class MainTest {
         int[] array3 = {1};
         assertFalse(Main.hasDuplicates(array3));
         int[] emptyArray = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.reverseArray(emptyArray)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.reverseArray(emptyArray));
         assertEquals("Массив не может быть null или пустым", exception.getMessage());
     }
 
@@ -130,10 +119,7 @@ class MainTest {
         int[] expected2 = {1, 2, 3, 4};
         assertArrayEquals(expected2, Main.replaceNegativesWithAbsolute(input2));
         int[] emptyArray = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.replaceNegativesWithAbsolute(emptyArray)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.replaceNegativesWithAbsolute(emptyArray));
         assertEquals("Массив не может быть null или пустым", exception.getMessage());
     }
 
@@ -152,8 +138,7 @@ class MainTest {
                 {0, 0, 1}
         };
         assertArrayEquals(expected2, Main.createDiagonalMatrix(3));
-        Exception exception = assertThrows(IllegalArgumentException.class,
-                () -> Main.createDiagonalMatrix(0));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> Main.createDiagonalMatrix(0));
         assertEquals("Размер матрицы должен быть больше нуля!", exception.getMessage());
     }
 
@@ -199,10 +184,7 @@ class MainTest {
         int[] result1 = Main.findMaxElement(matrix1);
         assertArrayEquals(new int[]{25, 0, 0}, result1);
         int[][] emptyMatrix = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.findMaxElement(emptyMatrix)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.findMaxElement(emptyMatrix));
         assertEquals("Матрица не может быть null или пустой", exception.getMessage());
     }
 
@@ -222,10 +204,7 @@ class MainTest {
         int[][] matrix2 = {};
         assertTrue(Main.isSquareMatrix(matrix2));
         int[][] matrix3 = null;
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.isSquareMatrix(matrix3)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.isSquareMatrix(matrix3));
         assertEquals("Матрица не может быть null или пустой", exception.getMessage());
     }
 
@@ -249,10 +228,7 @@ class MainTest {
         int[] result2 = Main.analyzeMatrix(matrix2);
         assertArrayEquals(new int[]{-45, -1, -9}, result2);
         int[][] emptyMatrix = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.analyzeMatrix(emptyMatrix)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.analyzeMatrix(emptyMatrix));
         assertEquals("Матрица не может быть null или пустой", exception.getMessage());
     }
 
@@ -281,10 +257,7 @@ class MainTest {
         };
         assertArrayEquals(expected1, Main.oddEvenFillingMatrix(matrix1));
         int[][] emptyMatrix = {};
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> Main.oddEvenFillingMatrix(emptyMatrix)
-        );
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Main.oddEvenFillingMatrix(emptyMatrix));
         assertEquals("Матрица не может быть null или пустой", exception.getMessage());
     }
 }
