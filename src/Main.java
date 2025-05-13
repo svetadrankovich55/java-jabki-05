@@ -72,8 +72,8 @@ public class Main {
 
         System.out.println(isSquareMatrix(createMatrix(7, 3)));
         System.out.println(isSquareMatrix(createMatrix(7, 7)));
-        System.out.println(Arrays.toString(analyzeMatrix(createMatrix(6,7))));
-        print(oddEvenFillingMatrix(createMatrix(7,7)));
+        System.out.println(Arrays.toString(analyzeMatrix(createMatrix(6, 7))));
+        print(oddEvenFillingMatrix(createMatrix(7, 7)));
 
     }
 
@@ -203,8 +203,8 @@ public class Main {
         if (arr == null || arr.length == 0) {
             throw new IllegalArgumentException("Массив не может быть null или пустым");
         }
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
             if (arr[i] < min) {
                 min = arr[i];
             }
@@ -351,12 +351,13 @@ public class Main {
         for (int i = 0; i < matrix.length; i++) {
             int rowSum = 0;
             for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i] == null) continue;
+                if (matrix[i] == null) {
+                    continue;
+                }
 
                 rowSum += matrix[i][j];
                 if (matrix[i][j] > max) {
                     max = matrix[i][j];
-
                 }
                 if (matrix[i][j] < min) {
                     min = matrix[i][j];
